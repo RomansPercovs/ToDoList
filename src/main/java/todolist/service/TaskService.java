@@ -1,6 +1,6 @@
 package todolist.service;
 
-import todolist.Task;
+import todolist.models.Task;
 
 import java.util.List;
 

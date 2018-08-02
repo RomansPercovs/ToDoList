@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="todolist.service.TaskServiceImp" %>
-<%@ page import="todolist.Task" %>
+<%@ page import="todolist.models.Task" %>
 <%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html lang="en">
