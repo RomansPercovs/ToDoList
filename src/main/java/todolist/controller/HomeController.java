@@ -19,7 +19,8 @@ public class HomeController {
 
     @GetMapping("/")
     public ModelAndView index() {
-        return new ModelAndView("/index.jsp");
+        List<Task> tasks = taskServiceImp.findAll();
+        return new ModelAndView("/index.jsp").addObject("tasks", tasks);
     }
 
     @GetMapping("/tasks")

@@ -17,12 +17,8 @@
                 <th>Task</th>
                 <th>Status</th>
             </tr>
-            <%
-                TaskServiceImp taskServiceImp = new TaskServiceImp();
-                List<Task> list = taskServiceImp.findAll();
-                request.setAttribute("list", list);
-            %>
-            <c:forEach var="item" items="${list}">
+
+            <c:forEach var="item" items="${tasks}">
                 <tr>
                     <td>${item.name}</td>
                     <td>${item.task}</td>
