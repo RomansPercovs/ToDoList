@@ -1,4 +1,4 @@
-package todolist.Forms;
+package todolist.forms;
 
 public class TaskForm {
 
