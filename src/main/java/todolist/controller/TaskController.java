@@ -1,16 +1,14 @@
 package todolist.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
-import todolist.forms.TaskForm;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 import todolist.models.Task;
 import todolist.service.TaskServiceImp;
 
 import java.util.List;
 
-@RestController
+@Controller
 public class TaskController {
 
     @Autowired
@@ -22,9 +20,9 @@ public class TaskController {
     }
 
     @PostMapping(value = "/create")
-    public String createTask(TaskForm taskForm){
-        taskServiceImp.create(new Task(taskForm.getName(),taskForm.getTask(), taskForm.getStatus()));
-        return "create";
+    public String createTask(@RequestParam("name") String name, @RequestParam("task") String task, @RequestParam("status") String status){
+        taskServiceImp.create(new Task(name,task, status));
+        return "redirect:http://localhost:8080/";
     }
 
 }

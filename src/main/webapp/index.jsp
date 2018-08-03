@@ -51,16 +51,16 @@
         <button id="tasks">Get tasks from JSON</button>
     </div>
     
-    <%--<h2>Create new task</h2>--%>
-    <%--<form method="post" action="create">--%>
-        <%--<div><label for="name">Name:</label></div>--%>
-        <%--<input id="name" type="name"/>--%>
-        <%--<div><label for="task">Task:</label></div>--%>
-        <%--<input id="task" type="task"/>--%>
-        <%--<div><label for="status">Status:</label></div>--%>
-        <%--<input id="status" type="status"/>--%>
-        <%--<div><input type="submit" value="Submit"/></div>--%>
-    <%--</form>--%>
+    <h2>Create new task</h2>
+    <form method="post" name="taskForm" action="http://localhost:8080/create">
+        <div><label for="name">Name:</label></div>
+        <input id="name" name="name" type="text"/>
+        <div><label for="task">Task:</label></div>
+        <input id="task" name="task" type="text"/>
+        <div><label for="status">Status:</label></div>
+        <input id="status" name="status" type="text"/>
+        <div><input type="submit" value="Submit"/></div>
+    </form>
 </main>
 </body>
 </html>
