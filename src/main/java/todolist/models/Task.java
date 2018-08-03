@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Task {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "task_id")
     private int id;
     @Column(name = "name")
@@ -40,5 +40,21 @@ public class Task {
 
     public String getStatus() {
         return status;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setTask(String task) {
+        this.task = task;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

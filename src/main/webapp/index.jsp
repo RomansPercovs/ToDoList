@@ -1,17 +1,38 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="todolist.service.TaskServiceImp" %>
-<%@ page import="todolist.models.Task" %>
-<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>TODO List</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#tasks').click(function () {
+                $.ajax({
+                    type: 'GET',
+                    url: 'http://localhost:8080/tasks',
+                    dataType: 'json',
+                    contentType: 'application/json',
+                    success: function (json) {
+                        $(json).each(function (index, item) {
+                            var name = item.name;
+                            var task = item.task;
+                            var status = item.status;
+                            $('<tr><td>' + name + '</td><td>' +
+                                task + '</td><td>' + status + '</td></tr>').appendTo('#tasks_list');
+                        });
+                    }
+                });
+            });
+
+        });
+    </script>
 </head>
 <body>
 <main>
     <div>
-        <table>
+        <h2>Tasks from GET request which return HTML</h2>
+        <table id="tasks_list">
             <tr>
                 <th>Name</th>
                 <th>Task</th>
@@ -25,8 +46,21 @@
                     <td>${item.status}</td>
                 </tr>
             </c:forEach>
+
         </table>
+        <button id="tasks">Get tasks from JSON</button>
     </div>
+    
+    <%--<h2>Create new task</h2>--%>
+    <%--<form method="post" action="create">--%>
+        <%--<div><label for="name">Name:</label></div>--%>
+        <%--<input id="name" type="name"/>--%>
+        <%--<div><label for="task">Task:</label></div>--%>
+        <%--<input id="task" type="task"/>--%>
+        <%--<div><label for="status">Status:</label></div>--%>
+        <%--<input id="status" type="status"/>--%>
+        <%--<div><input type="submit" value="Submit"/></div>--%>
+    <%--</form>--%>
 </main>
 </body>
 </html>
