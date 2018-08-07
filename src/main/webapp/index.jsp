@@ -26,15 +26,15 @@
             });
             $('.delete').click(function () {
                 var ans = confirm("Are you sure you want to delete this Record?");
+                var $element = $(this);
                 if(ans) {
-                    var id = $(this).closest('tr').find("td:eq(3)").text();
-                    console.log(id);
+                    var id = $element.closest('tr').find("td:eq(3)").text();
                     $.ajax({
                         type: 'DELETE',
                         url: '/delete/' + id,
                         contentType: 'application/json',
-                        success: function () {
-                            $($(this).closest('tr')).remove();
+                        success: function (response) {
+                            $element.closest('tr').remove();
                         }
                     });
                 }
