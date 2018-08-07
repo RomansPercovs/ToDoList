@@ -24,7 +24,21 @@
                     }
                 });
             });
-
+            $('.delete').click(function () {
+                var ans = confirm("Are you sure you want to delete this Record?");
+                if(ans) {
+                    var id = $(this).closest('tr').find("td:eq(3)").text();
+                    console.log(id);
+                    $.ajax({
+                        type: 'DELETE',
+                        url: '/delete/' + id,
+                        contentType: 'application/json',
+                        success: function () {
+                            $($(this).closest('tr')).remove();
+                        }
+                    });
+                }
+            });
         });
     </script>
 </head>
@@ -38,15 +52,15 @@
                 <th>Task</th>
                 <th>Status</th>
             </tr>
-
             <c:forEach var="item" items="${tasks}">
                 <tr>
                     <td>${item.name}</td>
                     <td>${item.task}</td>
                     <td>${item.status}</td>
+                    <td style="display: none" class="task_id">${item.id}</td>
+                    <td><button class="delete">DELETE</button>
                 </tr>
             </c:forEach>
-
         </table>
         <button id="tasks">Get tasks from JSON</button>
     </div>
@@ -61,6 +75,7 @@
         <input id="status" name="status" type="text"/>
         <div><input type="submit" value="Submit"/></div>
     </form>
+    
 </main>
 </body>
 </html>
