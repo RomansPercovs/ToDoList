@@ -28,9 +28,9 @@
 </head>
 <body>
 <header>
-    <%--<img src="<%=request.getContextPath()%>../webapp/img/logo.png" alt="logo"/>--%>
     <a href="#">Home</a>
     <a href="create.jsp">Create Task</a>
+    <a href="">Delete Task</a>
     <a href="alltasks.jsp">Show all tasks(JSON)</a>
 </header>
 <main>
