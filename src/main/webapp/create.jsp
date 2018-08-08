@@ -5,41 +5,13 @@
     <meta charset="UTF-8">
     <title>TODO List</title>
     <link rel="stylesheet" href="<c:url value="css/style.css"/>"/>
-    <style>
-        ul{
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: #f2f2f2;
-        }
-
-        li{
-            float: left;
-        }
-
-        li a {
-            display: block;
-            color: black;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: bold;
-        }
-
-        li a:hover {
-            background-color: #4CAF50;
-            color:white;
-        }
-    </style>
 </head>
 <body>
 <div>
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li class="active"><a href="#">Create Task</a></li>
-        <li><a href="alltasks.jsp">Show all tasks(JSON)</a></li>
+    <ul class="nav-bar">
+        <li class="nav-list"><a class="nav-link" href="/">Home</a></li>
+        <li class="nav-list" class="active"><a class="nav-link" href="#">Create Task</a></li>
+        <li class="nav-list"><a class="nav-link" href="alltasks.jsp">Show all tasks(JSON)</a></li>
     </ul>
 </div>
 <main>

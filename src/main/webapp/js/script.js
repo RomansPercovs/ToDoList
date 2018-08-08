@@ -7,9 +7,9 @@ $(document).ready(function () {
             contentType: 'application/json',
             success: function (json) {
                 $(json).each(function (index, item) {
-                    var name = item.name;
-                    var task = item.task;
-                    var status = item.status;
+                    let name = item.name;
+                    let task = item.task;
+                    let status = item.status;
                     $('<tr><td>' + name + '</td><td>' +
                         task + '</td><td>' + status + '</td></tr>').appendTo('#tasks_list');
                 });
@@ -17,10 +17,10 @@ $(document).ready(function () {
         });
     });
     $('.delete-btn').click(function () {
-        var ans = confirm("Are you sure you want to delete this Record?");
-        var $element = $(this);
+        let ans = confirm("Are you sure you want to delete this Record?");
+        let $element = $(this);
         if(ans) {
-            var id = $element.closest('tr').find("td:eq(3)").text();
+            let id = $element.closest('tr').find("td:eq(3)").text();
             $.ajax({
                 type: 'DELETE',
                 url: '/delete/' + id,
@@ -30,5 +30,8 @@ $(document).ready(function () {
                 }
             });
         }
+    });
+    $('#delete-menu').click(function () {
+        $('.delete').toggle();
     });
 });
