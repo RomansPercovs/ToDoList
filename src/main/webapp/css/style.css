@@ -1,13 +1,29 @@
+body {
+    display: block;
+    margin: 8px;
+}
+
 header {
     background: #eee;
     padding: 5px;
 }
 
-a {
-    display: inline-block;
-    vertical-align: middle;
-    padding: 0px 5px;
-    font-size: 1.2em;
+.active {
+    background-color: #4CAF50;
+}
+
+.active a{
+    color:white;
+}
+
+#delete-menu{
+    margin: 10px;
+    background-color: #4CAF50;
+    border: 1px solid green;
+    color: white;
+    padding: 10px 24px;
+    cursor: pointer;
+    float: left;
 }
 
 #tasks_list{
@@ -19,6 +35,12 @@ a {
 #tasks_list td, #tasks_list th{
     border: 1px solid #ddd;
     padding: 8px;
+}
+
+#tasks_list td.delete{
+    background-color: white;
+    border: none;
+    padding: 5px;
 }
 
 #tasks_list tr:nth-child(even){
@@ -35,5 +57,74 @@ a {
 
 .delete{
     display: none;
+}
+
+.form{
+    width: 400px;
+    margin:0 auto;
+    text-align: left;
+    margin-top: 10em;
+}
+
+h2{
+    font-weight: bold;
+}
+
+label{
+    display: block;
+    text-align: left;
+    color: #000000;
+    font-size: .875em;
+}
+
+.text-input{
+    overflow: hidden;
+    margin-bottom: .875em;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 1em 0 12px;
+    padding-left: 0;
+    background: none;
+    color: black;
+    font-size: 1.2em;
+    font-weight: 400;
+    border: none;
+    border-bottom: 1px solid lightgray;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+input[type="submit"]{
+    color: white;
+    background: #4CAF50;
+    padding: 1em 1.4em;
+    font-size: 1.2em;
+    border:none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover{
+    background-color: #45a049;
+}
+
+.separator {
+    height:3px;
+    width: 100%;
+    background: #4CAF50;
+    display: block;
+    transform: scaleX(0) translateY(-2px);
+    transform-origin: 50%;
+    opacity: 0;
+    transition: all .15s ;
+}
+
+* :focus {
+    outline-color: transparent;
+    outline-style: none;
 }
 

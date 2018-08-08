@@ -8,7 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
         $(document).ready(function () {
-            $('#tasks').click(function () {
+            // $('#tasks').click(function () {
                 $.ajax({
                     type: 'GET',
                     url: 'http://localhost:8080/tasks',
@@ -24,16 +24,50 @@
                         });
                     }
                 });
-            });
+            // });
         });
     </script>
+    <style>
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #f2f2f2;
+        }
+
+        li{
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+
+        li a:hover {
+            background-color: #4CAF50;
+            color:white;
+        }
+
+        #tasks_list{
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-<header>
-    <a href="/">Home</a>
-    <a href="create.jsp">Create Task</a>
-    <a href="#">Show all tasks(JSON)</a>
-</header>
+<div>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="create.jsp">Create Task</a></li>
+        <li class="active"><a href="#">Show all tasks(JSON)</a></li>
+    </ul>
+</div>
 <main>
     <div>
         <table id="tasks_list">
@@ -43,7 +77,7 @@
                 <th>Status</th>
             </tr>
         </table>
-        <button id="tasks">Get tasks from JSON</button>
+        <%--<button id="tasks">Get tasks from JSON</button>--%>
     </div>
 </main>
 </body>
