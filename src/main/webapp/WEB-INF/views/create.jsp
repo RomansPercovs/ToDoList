@@ -4,16 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <title>TODO List</title>
-    <link rel="stylesheet" href="<c:url value="css/style.css"/>"/>
+    <link rel="stylesheet" href="<c:url value="../../css/style.css"/>"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../../js/create.js"></script>
 </head>
 <body>
-<div>
-    <ul class="nav-bar">
-        <li class="nav-list"><a class="nav-link" href="/">Home</a></li>
-        <li class="nav-list" class="active"><a class="nav-link" href="#">Create Task</a></li>
-        <li class="nav-list"><a class="nav-link" href="alltasks.jsp">Show all tasks(JSON)</a></li>
-    </ul>
-</div>
+<%@ include file="../elements/nav-bar.jsp" %>
+
 <main>
     <div class="form">
         <h2>Create new task</h2>
@@ -36,7 +33,7 @@
                 <span class="separator"> </span>
             </div>
 
-            <div><input type="submit" value="Submit"/></div>
+            <div><input id="submit" type="submit" value="Submit"/></div>
         </form>
     </div>
 </main>

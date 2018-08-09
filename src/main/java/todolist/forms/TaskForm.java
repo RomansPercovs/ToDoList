@@ -10,7 +10,7 @@ public class TaskForm {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
@@ -29,4 +29,6 @@ public class TaskForm {
     public void setStatus(String status) {
         this.status = status;
     }
+
+
 }

@@ -4,18 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <title>TODO List</title>
-    <link rel="stylesheet" href="<c:url value="css/style.css"/>"/>
+    <link rel="stylesheet" href="<c:url value="../../css/style.css"/>"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="../../js/alltasks-script.js"></script>
 </head>
 <body>
-<div>
-    <ul class="nav-bar">
-        <li class="nav-list"><a class="nav-link" href="/">Home</a></li>
-        <li class="nav-list"><a class="nav-link" href="create.jsp">Create Task</a></li>
-        <li class="nav-list" class="active"><a class="nav-link" href="#">Show all tasks(JSON)</a></li>
-    </ul>
-</div>
+<%@ include file="../elements/nav-bar.jsp" %>
 <main>
     <div>
         <table id="tasks_list" style="margin-top: 20px;">
@@ -25,7 +19,6 @@
                 <th>Status</th>
             </tr>
         </table>
-        <button id="tasks">Get tasks from JSON</button>
     </div>
 </main>
 </body>

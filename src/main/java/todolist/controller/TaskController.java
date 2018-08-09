@@ -1,44 +1,38 @@
 package todolist.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import todolist.forms.TaskForm;
 import todolist.models.Task;
 import todolist.service.TaskServiceImp;
 
 import java.util.List;
 
-@Controller
+@RestController
 public class TaskController {
+    // TODO three methods: GET, POST, DELETE
+    // POST
+
+    private final TaskServiceImp taskServiceImp;
 
     @Autowired
-    private TaskServiceImp taskServiceImp;
+    public TaskController(TaskServiceImp taskServiceImp) {
+        this.taskServiceImp = taskServiceImp;
+    }
 
     @GetMapping("/tasks")
-    @ResponseBody
     public List<Task> showAllTasks() {
         return taskServiceImp.findAll();
     }
 
     @PostMapping(value = "/create")
-    public String createTask(@RequestParam("name") String name, @RequestParam("task") String task, @RequestParam("status") String status){
-        taskServiceImp.create(new Task(name,task, status));
-        return "redirect:http://localhost:8080/";
+    public void createTask(final TaskForm form){
+        taskServiceImp.create(new Task(form.getName(),form.getTask(), form.getStatus()));
     }
 
-//    @DeleteMapping(value = "/delete/{id}", produces = "application/json")
-//    public ResponseEntity deleteTask(@PathVariable long id){
-//        taskServiceImp.deleteById(id);
-//        return new ResponseEntity<Long>(id, HttpStatus.OK);
-//    }
-
-    @DeleteMapping(value = "/delete/{id}")
-    public @ResponseBody String deleteTask(@PathVariable long id){
+    @DeleteMapping(value = "/delete/{id}", produces = "application/json")
+    public void deleteTask(@PathVariable long id){
         taskServiceImp.deleteById(id);
-        return "redirect:http://localhost:8080/";
     }
-
-
 }
