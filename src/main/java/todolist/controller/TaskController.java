@@ -1,18 +1,17 @@
 package todolist.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import todolist.forms.TaskForm;
 import todolist.models.Task;
 import todolist.service.TaskServiceImp;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.List;
 
 @RestController
 public class TaskController {
-    // TODO three methods: GET, POST, DELETE
-    // POST
 
     private final TaskServiceImp taskServiceImp;
 
@@ -27,8 +26,9 @@ public class TaskController {
     }
 
     @PostMapping(value = "/create")
-    public void createTask(final TaskForm form){
+    public void createTask(final TaskForm form, HttpServletResponse response) throws IOException {
         taskServiceImp.create(new Task(form.getName(),form.getTask(), form.getStatus()));
+        response.sendRedirect("/");
     }
 
     @DeleteMapping(value = "/delete/{id}", produces = "application/json")
