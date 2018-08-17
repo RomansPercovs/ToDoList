@@ -7,11 +7,17 @@ import todolist.repositories.TaskRepository;
 
 import java.util.List;
 
+import static java.util.Objects.requireNonNull;
+
 @Service
-public class TaskServiceImp implements TaskService{
+public class TaskServiceImp implements TaskService {
+
+    private final TaskRepository taskRepository;
 
     @Autowired
-    private TaskRepository taskRepository;
+    public TaskServiceImp(TaskRepository taskRepository) {
+        this.taskRepository = requireNonNull(taskRepository);
+    }
 
     @Override
     public List<Task> findAll() {
@@ -19,12 +25,12 @@ public class TaskServiceImp implements TaskService{
     }
 
     @Override
-    public Task create(Task task){
+    public Task create(Task task) {
         return this.taskRepository.save(task);
     }
 
     @Override
-    public void deleteById(long id){
+    public void deleteById(long id) {
         this.taskRepository.deleteById(id);
     }
 }

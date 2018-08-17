@@ -3,7 +3,7 @@ body {
     margin: 8px;
 }
 
-.nav-bar{
+.nav-bar {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -11,7 +11,7 @@ body {
     background-color: #f2f2f2;
 }
 
-.nav-list{
+.nav-list {
     float: left;
 }
 
@@ -28,18 +28,18 @@ body {
 
 .nav-list .nav-link:hover {
     background-color: #4CAF50;
-    color:white;
+    color: white;
 }
 
 .active {
     background-color: #4CAF50;
 }
 
-.active a{
-    color:white;
+.active a {
+    color: white;
 }
 
-#delete-menu{
+#delete-menu {
     margin: 10px;
     background-color: #4CAF50;
     border: 1px solid green;
@@ -49,24 +49,24 @@ body {
     float: left;
 }
 
-#tasks_list{
+#tasks_list {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
 }
 
-#tasks_list td, #tasks_list th{
+#tasks_list td, #tasks_list th {
     border: 1px solid #ddd;
     padding: 8px;
 }
 
-#tasks_list td.delete{
+#tasks_list td.delete {
     background-color: white;
     border: none;
     padding: 5px;
 }
 
-#tasks_list tr:nth-child(even){
+#tasks_list tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
@@ -78,29 +78,29 @@ body {
     color: white;
 }
 
-.delete{
+.delete {
     display: none;
 }
 
-.form{
+.form {
     width: 400px;
-    margin:0 auto;
+    margin: 0 auto;
     text-align: left;
     margin-top: 10em;
 }
 
-h2{
+h2 {
     font-weight: bold;
 }
 
-label{
+label {
     display: block;
     text-align: left;
     color: #000000;
     font-size: .875em;
 }
 
-.text-input{
+.text-input {
     overflow: hidden;
     margin-bottom: .875em;
 }
@@ -121,29 +121,29 @@ input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset;
 }
 
-input[type="submit"]{
+input[type="submit"] {
     color: white;
     background: #4CAF50;
     padding: 1em 1.4em;
     font-size: 1.2em;
-    border:none;
+    border: none;
     border-radius: 10px;
     cursor: pointer;
 }
 
-input[type="submit"]:hover{
+input[type="submit"]:hover {
     background-color: #45a049;
 }
 
 .separator {
-    height:3px;
+    height: 3px;
     width: 100%;
     background: #4CAF50;
     display: block;
     transform: scaleX(0) translateY(-2px);
     transform-origin: 50%;
     opacity: 0;
-    transition: all .15s ;
+    transition: all .15s;
 }
 
 * :focus {

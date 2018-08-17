@@ -9,6 +9,8 @@ import todolist.service.TaskServiceImp;
 
 import java.util.List;
 
+import static java.util.Objects.requireNonNull;
+
 @Controller
 public class HomeController {
 
@@ -17,7 +19,7 @@ public class HomeController {
 
     @Autowired
     public HomeController(TaskServiceImp taskServiceImp) {
-        this.taskServiceImp = taskServiceImp;
+        this.taskServiceImp = requireNonNull(taskServiceImp);
     }
 
     @GetMapping("/")
@@ -28,12 +30,12 @@ public class HomeController {
     }
 
     @GetMapping("/create")
-    public String create(){
+    public String create() {
         return "create";
     }
 
     @GetMapping("/alltasks")
-    public String alltasks(){
+    public String alltasks() {
         return "alltasks";
     }
 }

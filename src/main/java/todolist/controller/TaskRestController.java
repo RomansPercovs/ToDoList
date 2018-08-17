@@ -10,14 +10,16 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+import static java.util.Objects.requireNonNull;
+
 @RestController
-public class TaskController {
+public class TaskRestController {
 
     private final TaskServiceImp taskServiceImp;
 
     @Autowired
-    public TaskController(TaskServiceImp taskServiceImp) {
-        this.taskServiceImp = taskServiceImp;
+    public TaskRestController(TaskServiceImp taskServiceImp) {
+        this.taskServiceImp = requireNonNull(taskServiceImp);
     }
 
     @GetMapping("/tasks")
@@ -27,12 +29,12 @@ public class TaskController {
 
     @PostMapping(value = "/create")
     public void createTask(final TaskForm form, HttpServletResponse response) throws IOException {
-        taskServiceImp.create(new Task(form.getName(),form.getTask(), form.getStatus()));
+        taskServiceImp.create(new Task(form.getName(), form.getTask(), form.getStatus()));
         response.sendRedirect("/");
     }
 
     @DeleteMapping(value = "/delete/{id}", produces = "application/json")
-    public void deleteTask(@PathVariable long id){
+    public void deleteTask(@PathVariable long id) {
         taskServiceImp.deleteById(id);
     }
 }
