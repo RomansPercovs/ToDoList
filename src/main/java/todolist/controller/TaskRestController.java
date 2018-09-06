@@ -29,11 +29,12 @@ public class TaskRestController {
 
     @PostMapping(value = "/create")
     public void createTask(final TaskForm form, HttpServletResponse response) throws IOException {
-        taskServiceImp.create(new Task(form.getName(), form.getTask(), form.getStatus()));
+        taskServiceImp.create(Task.getInstance(form.getName(),form.getTask(),form.getStatus()));
         response.sendRedirect("/");
+
     }
 
-    @DeleteMapping(value = "/delete/{id}", produces = "application/json")
+    @DeleteMapping(value = "/tasks/{id}", produces = "application/json")
     public void deleteTask(@PathVariable long id) {
         taskServiceImp.deleteById(id);
     }

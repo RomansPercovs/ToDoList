@@ -17,10 +17,14 @@ public class Task {
     @Column(name = "status")
     private String status;
 
-    public Task(String name, String task, String status) {
+    private Task(String name, String task, String status) {
         this.name = name;
         this.task = task;
         this.status = status;
+    }
+
+    public static Task getInstance(String name, String task, String status){
+        return new Task(name, task, status);
     }
 
     public Task() {
