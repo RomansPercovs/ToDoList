@@ -1,17 +1,19 @@
 package todolist.forms;
 
+import java.util.Objects;
+
 public class TaskForm {
 
-    private String name;
+    private String assignee;
     private String task;
     private String status;
 
-    public String getName() {
-        return name;
+    public String getAssignee() {
+        return assignee;
     }
 
-    public void setName(final String name) {
-        this.name = name;
+    public void setAssignee(final String name) {
+        this.assignee = name;
     }
 
     public String getTask() {
@@ -30,5 +32,27 @@ public class TaskForm {
         this.status = status;
     }
 
+    @Override
+    public String toString() {
+        return "TaskForm{" +
+                "assignee='" + assignee + '\'' +
+                ", task='" + task + '\'' +
+                ", status='" + status + '\'' +
+                '}';
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TaskForm taskForm = (TaskForm) o;
+        return Objects.equals(getAssignee(), taskForm.getAssignee()) &&
+                Objects.equals(getTask(), taskForm.getTask()) &&
+                Objects.equals(getStatus(), taskForm.getStatus());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getAssignee(), getTask(), getStatus());
+    }
 }

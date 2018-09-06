@@ -19,13 +19,13 @@
     <div>
         <table id="tasks_list">
             <tr>
-                <th>Name</th>
+                <th>Assignee</th>
                 <th>Task</th>
                 <th>Status</th>
             </tr>
             <c:forEach var="item" items="${tasks}">
                 <tr>
-                    <td>${item.name}</td>
+                    <td>${item.assignee}</td>
                     <td>${item.task}</td>
                     <td>${item.status}</td>
                     <td style="display: none" class="task_id">${item.id}</td>

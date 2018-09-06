@@ -29,9 +29,8 @@ public class TaskRestController {
 
     @PostMapping(value = "/create")
     public void createTask(final TaskForm form, HttpServletResponse response) throws IOException {
-        taskServiceImp.create(Task.getInstance(form.getName(),form.getTask(),form.getStatus()));
+        taskServiceImp.create(Task.getInstance(form.getAssignee(),form.getTask(),form.getStatus()));
         response.sendRedirect("/");
-
     }
 
     @DeleteMapping(value = "/tasks/{id}", produces = "application/json")

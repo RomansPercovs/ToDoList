@@ -13,7 +13,7 @@
     <div>
         <table id="tasks_list" style="margin-top: 20px;">
             <tr>
-                <th>Name</th>
+                <th>Assignee</th>
                 <th>Task</th>
                 <th>Status</th>
             </tr>

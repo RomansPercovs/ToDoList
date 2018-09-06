@@ -14,12 +14,12 @@
         <h2>Create new task</h2>
         <form method="post" name="taskForm">
             <div class="text-input">
-                <label for="name">Name</label>
-                <input id="name" name="name" type="text"/>
+                <label for="assignee">Assignee</label>
+                <input id="assignee" name="name" type="text"/>
                 <span class="separator"> </span>
             </div>
 
-            <div class="text-input">
+            <div class="text-input">s
                 <label for="task">Task</label>
                 <input id="task" name="task" type="text"/>
                 <span class="separator"> </span>
