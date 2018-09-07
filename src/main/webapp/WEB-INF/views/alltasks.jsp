@@ -9,9 +9,8 @@
 </head>
 <body>
 <%@ include file="../elements/nav-bar.jsp" %>
-<main>
     <div>
-        <table id="tasks_list" style="margin-top: 20px;">
+        <table id="tasks_list">
             <tr>
                 <th>Assignee</th>
                 <th>Task</th>
@@ -19,6 +18,5 @@
             </tr>
         </table>
     </div>
-</main>
 </body>
 </html>

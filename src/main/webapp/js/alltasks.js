@@ -6,8 +6,8 @@ $(document).ready(function () {
         contentType: 'application/json',
         success: function (json) {
             $(json).each(function (index, item) {
-                const name = item.name;
-                const task = item.task;
+                const name = item.assignee;
+                const task = item.assignment;
                 const status = item.status;
                 $('<tr><td>' + name + '</td><td>' +
                     task + '</td><td>' + status + '</td></tr>').appendTo('#tasks_list');

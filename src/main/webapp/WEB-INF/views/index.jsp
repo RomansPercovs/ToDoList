@@ -8,7 +8,7 @@
           href="<c:url value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>"/>
     <link rel="stylesheet" type="text/css" href="<c:url value="../../css/style.css"/>"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="../../js/script.js"></script>
+    <script src="../../js/index.js"></script>
 </head>
 <body>
 <%@ include file="../elements/nav-bar.jsp" %>
@@ -26,7 +26,7 @@
             <c:forEach var="item" items="${tasks}">
                 <tr>
                     <td>${item.assignee}</td>
-                    <td>${item.task}</td>
+                    <td>${item.assignment}</td>
                     <td>${item.status}</td>
                     <td style="display: none" class="task_id">${item.id}</td>
                     <td class="delete">
