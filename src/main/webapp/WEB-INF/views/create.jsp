@@ -12,22 +12,22 @@
 <main>
     <div class="form">
         <h2>Create new assignment</h2>
-        <form method="post" assignee="taskForm">
+        <form method="post" name="taskForm">
             <div class="text-input">
                 <label for="assignee">Assignee</label>
-                <input id="assignee" assignee="assignee" type="text"/>
+                <input id="assignee" name="assignee" type="text"/>
                 <span class="separator"> </span>
             </div>
 
-            <div class="text-input">s
+            <div class="text-input">
                 <label for="assignment">Task</label>
-                <input id="assignment" assignee="assignment" type="text"/>
+                <input id="assignment" name="assignment" type="text"/>
                 <span class="separator"> </span>
             </div>
 
             <div class="text-input">
                 <label for="status">Status</label>
-                <input id="status" assignee="status" type="text"/>
+                <input id="status" name="status" type="text"/>
                 <span class="separator"> </span>
             </div>
 

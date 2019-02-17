@@ -23,19 +23,6 @@
                 <th>Task</th>
                 <th>Status</th>
             </tr>
-            <c:forEach var="item" items="${tasks}">
-                <tr>
-                    <td>${item.assignee}</td>
-                    <td>${item.assignment}</td>
-                    <td>${item.status}</td>
-                    <td style="display: none" class="task_id">${item.id}</td>
-                    <td class="delete">
-                        <button class="delete-btn">
-                            <i class="glyphicon glyphicon-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-            </c:forEach>
         </table>
     </div>
 </main>

@@ -5,7 +5,7 @@ import java.util.Objects;
 public class TaskForm {
 
     private String assignee;
-    private String task;
+    private String assignment;
     private String status;
 
     public String getAssignee() {
@@ -16,12 +16,12 @@ public class TaskForm {
         this.assignee = name;
     }
 
-    public String getTask() {
-        return task;
+    public String getAssignment() {
+        return assignment;
     }
 
-    public void setTask(String task) {
-        this.task = task;
+    public void setAssignment(String assignment) {
+        this.assignment = assignment;
     }
 
     public String getStatus() {
@@ -36,7 +36,7 @@ public class TaskForm {
     public String toString() {
         return "TaskForm{" +
                 "assignee='" + assignee + '\'' +
-                ", task='" + task + '\'' +
+                ", assignment='" + assignment + '\'' +
                 ", status='" + status + '\'' +
                 '}';
     }
@@ -47,12 +47,12 @@ public class TaskForm {
         if (o == null || getClass() != o.getClass()) return false;
         TaskForm taskForm = (TaskForm) o;
         return Objects.equals(getAssignee(), taskForm.getAssignee()) &&
-                Objects.equals(getTask(), taskForm.getTask()) &&
+                Objects.equals(getAssignment(), taskForm.getAssignment()) &&
                 Objects.equals(getStatus(), taskForm.getStatus());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getAssignee(), getTask(), getStatus());
+        return Objects.hash(getAssignee(), getAssignment(), getStatus());
     }
 }
